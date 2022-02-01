@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_di.c                                     :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: duartebaeta <duartebaeta@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/14 15:45:22 by dhomem-d          #+#    #+#             */
-/*   Updated: 2022/01/28 11:27:54 by duartebaeta      ###   ########.fr       */
+/*   Created: 2022/01/28 16:26:47 by duartebaeta       #+#    #+#             */
+/*   Updated: 2022/01/31 16:57:19 by duartebaeta      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
-int	ft_printf_di(int data)
-{
-	int	counter;
+# include <stdio.h>
+# include <string.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include <stdarg.h>
+# include <limits.h>
+# include "../libft/libft.h"
 
-	counter = 0;
-	ft_putnbr_fd(data, 1);
-	if (data < 0)
-		counter++;
-	if (data == 0)
-		return (1);
-	while (data != 0)
-	{
-		data /= 10;
-		counter++;
-	}
-	return (counter);
-}
+d_list	**stack_assembler(int count, char *numbers[]);
+int		main(int argc, char *argv[]);
+
+#endif

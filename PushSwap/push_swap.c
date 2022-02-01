@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_di.c                                     :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: duartebaeta <duartebaeta@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/14 15:45:22 by dhomem-d          #+#    #+#             */
-/*   Updated: 2022/01/28 11:27:54 by duartebaeta      ###   ########.fr       */
+/*   Created: 2022/01/27 14:35:13 by dhomem-d          #+#    #+#             */
+/*   Updated: 2022/01/28 16:28:30 by duartebaeta      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-int	ft_printf_di(int data)
+d_list	**stack_assembler(int count, char *numbers[])
 {
-	int	counter;
+	d_list	**stack_a;
+	int		counter;
 
-	counter = 0;
-	ft_putnbr_fd(data, 1);
-	if (data < 0)
-		counter++;
-	if (data == 0)
-		return (1);
-	while (data != 0)
+	stack_a = (d_list **) malloc(sizeof(d_list*));
+	counter = 1;
+	stack_a[counter - 1] = ft_dublstnew(numbers[counter]);
+	counter++;
+	while (counter < count)
 	{
-		data /= 10;
+		stack_a[counter - 1] = ft_dublstnew(numbers[counter]);
+		ft_dublst_add_back(stack_a, stack_a[counter - 1]);
 		counter++;
 	}
-	return (counter);
+	return (stack_a);
 }

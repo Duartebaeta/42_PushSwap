@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_di.c                                     :+:      :+:    :+:   */
+/*   ft_dublst_add_back.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: duartebaeta <duartebaeta@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/14 15:45:22 by dhomem-d          #+#    #+#             */
-/*   Updated: 2022/01/28 11:27:54 by duartebaeta      ###   ########.fr       */
+/*   Created: 2022/01/27 16:34:57 by dhomem-d          #+#    #+#             */
+/*   Updated: 2022/01/28 11:52:53 by duartebaeta      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_printf_di(int data)
+void	ft_dublst_add_back(d_list **lst, d_list *new)
 {
-	int	counter;
+	d_list *cursur;
 
-	counter = 0;
-	ft_putnbr_fd(data, 1);
-	if (data < 0)
-		counter++;
-	if (data == 0)
-		return (1);
-	while (data != 0)
+	cursur = *lst;
+	if (*lst != NULL)
 	{
-		data /= 10;
-		counter++;
+		while (cursur->next != NULL)
+			cursur = cursur->next;
+		cursur->next = new;
+		new->previous = cursur;
 	}
-	return (counter);
+	else
+		*lst = new;
 }

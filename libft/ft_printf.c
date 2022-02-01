@@ -6,7 +6,7 @@
 /*   By: duartebaeta <duartebaeta@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 13:39:37 by dhomem-d          #+#    #+#             */
-/*   Updated: 2022/01/14 15:27:06 by duartebaeta      ###   ########.fr       */
+/*   Updated: 2022/01/28 11:28:26 by duartebaeta      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,6 @@ int	ft_printf(const char *format, ...)
 			if (ft_strchr("cspdiuxX%", format[counter + 1]) != NULL)
 			{
 				total += ft_selector(format[counter + 1], args);
-				if (format[counter + 1] != '%')
-					va_arg(args, int);
 				counter += 2;
 			}
 		}
@@ -69,10 +67,9 @@ int	ft_printf(const char *format, ...)
 // int main()
 // {
 // 	int total;
-	
-// 	total = ft_printf("%%%s%c %i%%", "ola tudo bem", '?', 19);
+// 	total = ft_printf(" %c %c %c ", '0', 0, '1');
 // 	printf("\nMy total=%i\n", total);
-// 	total = printf("%%%s%c %i%%", "ola tudo bem", '?', 19);
+// 	total = printf(" %c %c %c ", '0', 0, '1');
 // 	printf("\nTrue total=%i\n", total);
 // 	return 0;
 // }

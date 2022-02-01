@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_di.c                                     :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: duartebaeta <duartebaeta@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/14 15:45:22 by dhomem-d          #+#    #+#             */
-/*   Updated: 2022/01/28 11:27:54 by duartebaeta      ###   ########.fr       */
+/*   Created: 2022/01/28 15:48:48 by duartebaeta       #+#    #+#             */
+/*   Updated: 2022/01/28 16:29:36 by duartebaeta      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-int	ft_printf_di(int data)
+static void	test(void *t)
 {
-	int	counter;
+	write(1, t, 1);
+	write(1, "\n", 1);
+}
 
-	counter = 0;
-	ft_putnbr_fd(data, 1);
-	if (data < 0)
-		counter++;
-	if (data == 0)
-		return (1);
-	while (data != 0)
-	{
-		data /= 10;
-		counter++;
-	}
-	return (counter);
+int main(int argc, char *argv[])
+{
+	d_list	**stack_a;
+	
+	if (argc <= 2)
+		return 0;
+	stack_a = stack_assembler(argc, argv);
+	ft_lstiter(*stack_a, test);
+	return 0;
 }

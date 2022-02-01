@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_di.c                                     :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: duartebaeta <duartebaeta@student.42.fr>    +#+  +:+       +#+        */
+/*   By: dhomem-d <dhomem-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/14 15:45:22 by dhomem-d          #+#    #+#             */
-/*   Updated: 2022/01/28 11:27:54 by duartebaeta      ###   ########.fr       */
+/*   Created: 2022/01/27 14:53:15 by dhomem-d          #+#    #+#             */
+/*   Updated: 2022/01/27 17:11:34 by dhomem-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_printf_di(int data)
+#include "libft/libft.h"
+int main(int argc, char const *argv[])
 {
-	int	counter;
-
-	counter = 0;
-	ft_putnbr_fd(data, 1);
-	if (data < 0)
-		counter++;
-	if (data == 0)
-		return (1);
-	while (data != 0)
+	printf("%i\n", argc);
+	for(int counter = 1; counter < argc; counter++)
 	{
-		data /= 10;
-		counter++;
+		printf("%s\n", argv[counter]);	
 	}
-	return (counter);
+	return 0;
 }

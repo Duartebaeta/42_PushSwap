@@ -6,7 +6,7 @@
 /*   By: duartebaeta <duartebaeta@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 16:53:29 by dhomem-d          #+#    #+#             */
-/*   Updated: 2022/01/14 15:28:19 by duartebaeta      ###   ########.fr       */
+/*   Updated: 2022/01/28 15:38:55 by duartebaeta      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,14 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
+# include <limits.h>
+
+typedef struct sd_list
+{
+	struct sd_list	*previous;
+	void			*content;
+	struct sd_list	*next;	
+}	d_list;
 
 typedef struct s_list
 {
@@ -65,7 +73,7 @@ t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
-void	ft_lstiter(t_list *lst, void (*f)(void *));
+void	ft_lstiter(d_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 char	*ft_strdup(const char *s1);
 int		ft_printf(const char *format, ...);
@@ -77,5 +85,7 @@ int		ft_printf_c(char data);
 int		ft_printf_di(int data);
 int		ft_printf_s(char *data);
 int		needsomelines(char c);
+void	ft_dublst_add_back(d_list **lst, d_list *new);
+d_list	*ft_dublstnew(void *content);
 
 #endif
