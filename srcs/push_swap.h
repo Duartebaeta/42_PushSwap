@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: duartebaeta <duartebaeta@student.42.fr>    +#+  +:+       +#+        */
+/*   By: dhomem-d <dhomem-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/28 16:26:47 by duartebaeta       #+#    #+#             */
-/*   Updated: 2022/01/31 16:57:19 by duartebaeta      ###   ########.fr       */
+/*   Created: 2022/02/04 16:24:10 by dhomem-d          #+#    #+#             */
+/*   Updated: 2022/02/04 17:51:28 by dhomem-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,19 @@
 # include <stdarg.h>
 # include <limits.h>
 # include "../libft/libft.h"
+# define BLK "\e[0;30m"
+# define RED "\e[0;31m"
 
-d_list	**stack_assembler(int count, char *numbers[]);
-int		main(int argc, char *argv[]);
+typedef struct sd_list
+{
+	void	*prev;
+	int		content;
+	void	*next;	
+}	d_list;
+
+int		is_dup(int num, int index, char *argv[]);
+int		is_digit(int argc, char *argv[]);
+int		arg_check(int argc, char *argv[]);
+long	ft_atol(const char *str);
 
 #endif

@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dublstnew.c                                     :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dhomem-d <dhomem-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/27 16:25:26 by dhomem-d          #+#    #+#             */
-/*   Updated: 2022/01/27 16:45:11 by dhomem-d         ###   ########.fr       */
+/*   Created: 2022/02/04 16:31:10 by dhomem-d          #+#    #+#             */
+/*   Updated: 2022/02/04 17:24:23 by dhomem-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-d_list	*ft_dublstnew(void *content)
+int main(int argc, char *argv[])
 {
-	d_list	*new;
-	
-	new = (d_list *) malloc(sizeof(d_list));
-	if (!new)
-		return (NULL);
-	new->previous = NULL;
-	new->content = content;
-	new->next = NULL;
-	return (new);
+	arg_check(argc, argv);
+	return 0;
 }

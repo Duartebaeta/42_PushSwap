@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: duartebaeta <duartebaeta@student.42.fr>    +#+  +:+       +#+        */
+/*   By: dhomem-d <dhomem-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 17:03:13 by dhomem-d          #+#    #+#             */
-/*   Updated: 2022/01/28 11:38:52 by duartebaeta      ###   ########.fr       */
+/*   Updated: 2022/02/01 17:26:35 by dhomem-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstiter(d_list *lst, void (*f)(void *))
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	while (lst != NULL)
 	{
