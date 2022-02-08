@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dhomem-d <dhomem-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: duartebaeta <duartebaeta@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 16:24:10 by dhomem-d          #+#    #+#             */
-/*   Updated: 2022/02/04 17:51:28 by dhomem-d         ###   ########.fr       */
+/*   Updated: 2022/02/08 18:14:36 by duartebaeta      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,17 @@
 
 typedef struct sd_list
 {
-	void	*prev;
-	int		content;
-	void	*next;	
+	struct sd_list	*prev;
+	int				content;
+	struct sd_list	*next;	
 }	d_list;
 
 int		is_dup(int num, int index, char *argv[]);
 int		is_digit(int argc, char *argv[]);
 int		arg_check(int argc, char *argv[]);
 long	ft_atol(const char *str);
+d_list	*stack_init(char *numbers[]);
+void	printlst(d_list **lst);
+void	swap(d_list **stack);
 
 #endif

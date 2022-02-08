@@ -1,28 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   moves.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: duartebaeta <duartebaeta@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/04 16:31:10 by dhomem-d          #+#    #+#             */
-/*   Updated: 2022/02/08 18:15:57 by duartebaeta      ###   ########.fr       */
+/*   Created: 2022/02/07 17:37:04 by duartebaeta       #+#    #+#             */
+/*   Updated: 2022/02/08 18:20:12 by duartebaeta      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int main(int argc, char *argv[])
+int	lstsize(d_list	*lst)
 {
-	d_list	**stack_a;
+	int	counter;
 
-	if (arg_check(argc, argv) != 0)
-		return (1);
-	stack_a = (d_list**) malloc(sizeof(d_list*));
-	if (!stack_a)
-		return (2);
-	*stack_a = stack_init(argv);
-	swap(stack_a);
-	printlst(stack_a);
-	return 0;
+	counter = 0;
+	while (lst != NULL)
+	{
+		counter++;
+		lst = lst->next;
+	}
+	return (counter);
+}
+
+void	swap(d_list **stack)
+{
+	int		tmp;
+	d_list	*head;
+
+	head = *stack;
+	if (lstsize(head) <= 1)
+		return ;
+	tmp = head->content;
+	head->content = head->next->content;
+	head->next->content = tmp;
 }
