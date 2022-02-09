@@ -6,9 +6,11 @@
 /*   By: dhomem-d <dhomem-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 17:45:16 by dhomem-d          #+#    #+#             */
-/*   Updated: 2022/02/04 17:51:17 by dhomem-d         ###   ########.fr       */
+/*   Updated: 2022/02/09 15:39:44 by dhomem-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "utils.h"
 
 static int	ft_spaces(const char *string)
 {

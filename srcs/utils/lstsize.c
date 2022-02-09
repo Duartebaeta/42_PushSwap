@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   lstsize.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dhomem-d <dhomem-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/04 16:24:10 by dhomem-d          #+#    #+#             */
-/*   Updated: 2022/02/09 15:38:24 by dhomem-d         ###   ########.fr       */
+/*   Created: 2022/02/09 15:28:52 by dhomem-d          #+#    #+#             */
+/*   Updated: 2022/02/09 15:39:32 by dhomem-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "utils.h"
 
-# include <stdio.h>
-# include <string.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdarg.h>
-# include <limits.h>
-# include "../libft/libft.h"
-# include "./utils/utils.h"
-# define BLK "\e[0;30m"
-# define RED "\e[0;31m"
+int	lstsize(d_list	*lst)
+{
+	int	counter;
 
-int		arg_check(int argc, char *argv[]);
-
-#endif
+	counter = 0;
+	while (lst != NULL)
+	{
+		counter++;
+		lst = lst->next;
+	}
+	return (counter);
+}

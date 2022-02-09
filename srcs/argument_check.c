@@ -6,13 +6,13 @@
 /*   By: dhomem-d <dhomem-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 16:32:56 by dhomem-d          #+#    #+#             */
-/*   Updated: 2022/02/04 18:02:38 by dhomem-d         ###   ########.fr       */
+/*   Updated: 2022/02/09 15:35:35 by dhomem-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	is_dup(int num, int index, char *argv[])
+static int	is_dup(int num, int index, char *argv[])
 {
 	int	counter;
 
@@ -29,7 +29,7 @@ int	is_dup(int num, int index, char *argv[])
 	return (0);
 }
 
-int	is_digit(int argc, char *argv[])
+static int	is_digit(int argc, char *argv[])
 {
 	int	counter;
 	int	subcounter;

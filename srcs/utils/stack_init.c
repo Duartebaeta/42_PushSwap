@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   stack_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: duartebaeta <duartebaeta@student.42.fr>    +#+  +:+       +#+        */
+/*   By: dhomem-d <dhomem-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 16:59:47 by duartebaeta       #+#    #+#             */
-/*   Updated: 2022/02/07 17:30:41 by duartebaeta      ###   ########.fr       */
+/*   Updated: 2022/02/09 15:39:17 by dhomem-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "utils.h"
 
 static d_list	*new_node(int content, d_list *prev)
 {

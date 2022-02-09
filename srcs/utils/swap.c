@@ -1,29 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   moves.c                                            :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: duartebaeta <duartebaeta@student.42.fr>    +#+  +:+       +#+        */
+/*   By: dhomem-d <dhomem-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/07 17:37:04 by duartebaeta       #+#    #+#             */
-/*   Updated: 2022/02/08 18:20:12 by duartebaeta      ###   ########.fr       */
+/*   Created: 2022/02/09 15:27:37 by dhomem-d          #+#    #+#             */
+/*   Updated: 2022/02/09 15:39:07 by dhomem-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-int	lstsize(d_list	*lst)
-{
-	int	counter;
-
-	counter = 0;
-	while (lst != NULL)
-	{
-		counter++;
-		lst = lst->next;
-	}
-	return (counter);
-}
+#include "utils.h"
 
 void	swap(d_list **stack)
 {

@@ -6,7 +6,7 @@
 /*   By: dhomem-d <dhomem-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 16:53:29 by dhomem-d          #+#    #+#             */
-/*   Updated: 2022/02/02 18:59:35 by dhomem-d         ###   ########.fr       */
+/*   Updated: 2022/02/09 15:37:34 by dhomem-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,13 @@
 # include <unistd.h>
 # include <stdarg.h>
 # include <limits.h>
+
+typedef struct sd_list
+{
+	struct sd_list	*prev;
+	int				content;
+	struct sd_list	*next;	
+}	d_list;
 
 typedef struct s_list
 {
