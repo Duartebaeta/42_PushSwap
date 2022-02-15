@@ -6,7 +6,7 @@
 /*   By: dhomem-d <dhomem-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 15:26:45 by dhomem-d          #+#    #+#             */
-/*   Updated: 2022/02/09 15:39:27 by dhomem-d         ###   ########.fr       */
+/*   Updated: 2022/02/15 17:15:12 by dhomem-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static void	thankyou_norminette(d_list *head_b, d_list **push, d_list **receive)
 	*receive = head_b;
 }
 
-void	push(d_list **receive, d_list **push)
+void	push(d_list **receive, d_list **push, char *print)
 {
 	d_list	*head_a;
 	d_list	*head_b;
@@ -44,4 +44,5 @@ void	push(d_list **receive, d_list **push)
 	}
 	else
 		thankyou_norminette(head_b, push, receive);
+	ft_printf("%s\n", print);
 }

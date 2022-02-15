@@ -6,7 +6,7 @@
 /*   By: dhomem-d <dhomem-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 16:31:10 by dhomem-d          #+#    #+#             */
-/*   Updated: 2022/02/09 15:22:51 by dhomem-d         ###   ########.fr       */
+/*   Updated: 2022/02/15 18:04:29 by dhomem-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,5 @@ int main(int argc, char *argv[])
 	if (!stack_a)
 		return (2);
 	*stack_a = stack_init(argv);
-	rev_rotate(stack_a);
-	printlst(stack_a);
 	return 0;
 }

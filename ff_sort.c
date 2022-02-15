@@ -1,29 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ff_sort.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dhomem-d <dhomem-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/21 16:57:14 by dhomem-d          #+#    #+#             */
-/*   Updated: 2022/02/15 19:15:40 by dhomem-d         ###   ########.fr       */
+/*   Created: 2022/02/15 17:48:31 by dhomem-d          #+#    #+#             */
+/*   Updated: 2022/02/15 18:04:50 by dhomem-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+void	divide(d_list **stack_a, d_list **stack_b)
 {
-	unsigned char	*newbing;
-	unsigned char	new;
+	int	size;
 
-	new = c;
-	newbing = (unsigned char *)b;
-	while (len != 0)
-	{
-		*newbing = new;
-		len--;
-		newbing++;
-	}
-	return (b);
+	size = lstsize(*stack_a);
+	
 }
