@@ -6,43 +6,44 @@
 /*   By: dhomem-d <dhomem-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 15:26:45 by dhomem-d          #+#    #+#             */
-/*   Updated: 2022/02/15 17:15:12 by dhomem-d         ###   ########.fr       */
+/*   Updated: 2022/02/16 15:30:48 by dhomem-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
-static void	thankyou_norminette(d_list *head_b, d_list **push, d_list **receive)
+static void	thankyou_norminette(d_list *head_push, d_list **push, d_list **receive)
 {
-	if (head_b->next)
+	if (head_push->next)
 	{
-		head_b->next->prev = NULL;
-		*push = head_b->next;
+		head_push->next->prev = NULL;
+		*push = head_push->next;
 	}
-	*receive = head_b;
+	*receive = head_push;
+	head_push->next = NULL;
 }
 
 void	push(d_list **receive, d_list **push, char *print)
 {
-	d_list	*head_a;
-	d_list	*head_b;
+	d_list	*head_rec;
+	d_list	*head_push;
 
-	head_a = *receive;
-	head_b = *push;
+	head_rec = *receive;
+	head_push = *push;
 	if (lstsize(*push) == 0)
 		return ;
-	if (head_a)
+	if (head_rec)
 	{
-		if (head_b->next)
+		if (head_push->next)
 		{
-			head_b->next->prev = NULL;
-			*push = head_b->next;
+			head_push->next->prev = NULL;
+			*push = head_push->next;
 		}
-		head_b->next = head_a;
-		head_a->prev = head_b;
-		*receive = head_b;
+		head_push->next = head_rec;
+		head_rec->prev = head_push;
+		*receive = head_push;
 	}
 	else
-		thankyou_norminette(head_b, push, receive);
+		thankyou_norminette(head_push, push, receive);
 	ft_printf("%s\n", print);
 }
