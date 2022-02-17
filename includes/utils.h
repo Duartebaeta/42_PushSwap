@@ -6,7 +6,7 @@
 /*   By: dhomem-d <dhomem-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 15:32:45 by dhomem-d          #+#    #+#             */
-/*   Updated: 2022/02/17 14:13:24 by dhomem-d         ###   ########.fr       */
+/*   Updated: 2022/02/17 19:43:52 by dhomem-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	printlst(d_list **lst);
 int		lstsize(d_list	*lst);
 int		is_sorted(d_list **stack);
 void	two_sort(d_list **stack);
-void	sort(d_list **stack_a);
+int		sort(d_list **stack_a);
 void	three_sort(d_list **stack);
 void	ss(d_list **stack_a, d_list **stack_b);
 void	rr(d_list **stack_a, d_list **stack_b);

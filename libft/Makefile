@@ -26,7 +26,7 @@ INCLUDES = libft.h
 
 
 .c.o:
-	@$(CC) $(CFLAGS) -c $(SRCS) 
+	@$(CC) $(CFLAGS) -c $(SRCS)
 
 $(NAME): $(OBJS)
 	@ar rcs $(NAME) $(OBJS)
