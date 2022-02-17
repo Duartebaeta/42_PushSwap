@@ -6,11 +6,11 @@
 /*   By: dhomem-d <dhomem-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 18:03:08 by dhomem-d          #+#    #+#             */
-/*   Updated: 2022/02/15 17:48:08 by dhomem-d         ###   ########.fr       */
+/*   Updated: 2022/02/16 19:44:52 by dhomem-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void	two_sort(d_list **stack)
 {

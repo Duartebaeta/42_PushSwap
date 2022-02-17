@@ -6,11 +6,11 @@
 /*   By: dhomem-d <dhomem-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 17:23:23 by dhomem-d          #+#    #+#             */
-/*   Updated: 2022/02/15 17:45:15 by dhomem-d         ###   ########.fr       */
+/*   Updated: 2022/02/16 19:47:27 by dhomem-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
+#include "../../includes/utils.h"
 
 void	ss(d_list **stack_a, d_list **stack_b)
 {

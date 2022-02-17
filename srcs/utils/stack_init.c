@@ -6,11 +6,11 @@
 /*   By: dhomem-d <dhomem-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 16:59:47 by duartebaeta       #+#    #+#             */
-/*   Updated: 2022/02/09 15:39:17 by dhomem-d         ###   ########.fr       */
+/*   Updated: 2022/02/16 19:47:26 by dhomem-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
+#include "../../includes/utils.h"
 
 static d_list	*new_node(int content, d_list *prev)
 {

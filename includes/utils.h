@@ -6,7 +6,7 @@
 /*   By: dhomem-d <dhomem-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 15:32:45 by dhomem-d          #+#    #+#             */
-/*   Updated: 2022/02/15 17:43:34 by dhomem-d         ###   ########.fr       */
+/*   Updated: 2022/02/17 14:13:24 by dhomem-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 # include <unistd.h>
 # include <stdarg.h>
 # include <limits.h>
-# include "../../libft/libft.h"
-# include "../push_swap.h"
+# include "../libft/libft.h"
+# include "push_swap.h"
 # define BLK "\e[0;30m"
 # define RED "\e[0;31m"
 

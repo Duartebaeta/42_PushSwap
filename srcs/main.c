@@ -6,11 +6,11 @@
 /*   By: dhomem-d <dhomem-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 16:31:10 by dhomem-d          #+#    #+#             */
-/*   Updated: 2022/02/16 14:56:43 by dhomem-d         ###   ########.fr       */
+/*   Updated: 2022/02/16 19:44:30 by dhomem-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 int main(int argc, char *argv[])
 {

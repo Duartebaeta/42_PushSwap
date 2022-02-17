@@ -26,18 +26,18 @@ INCLUDES = libft.h
 
 
 .c.o:
-	$(CC) $(CFLAGS) -c $(SRCS) 
+	@$(CC) $(CFLAGS) -c $(SRCS) 
 
 $(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS)
+	@ar rcs $(NAME) $(OBJS)
 
 all: $(NAME)
 
 clean:
-	$(RM) $(OBJS) 
+	@$(RM) $(OBJS) 
 
 fclean: clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
 
 re: fclean all
 

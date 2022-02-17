@@ -6,11 +6,11 @@
 /*   By: dhomem-d <dhomem-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 16:32:56 by dhomem-d          #+#    #+#             */
-/*   Updated: 2022/02/09 15:35:35 by dhomem-d         ###   ########.fr       */
+/*   Updated: 2022/02/16 19:44:45 by dhomem-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 static int	is_dup(int num, int index, char *argv[])
 {

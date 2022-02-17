@@ -6,11 +6,11 @@
 /*   By: dhomem-d <dhomem-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 15:26:45 by dhomem-d          #+#    #+#             */
-/*   Updated: 2022/02/16 15:30:48 by dhomem-d         ###   ########.fr       */
+/*   Updated: 2022/02/16 19:47:35 by dhomem-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
+#include "../../includes/utils.h"
 
 static void	thankyou_norminette(d_list *head_push, d_list **push, d_list **receive)
 {

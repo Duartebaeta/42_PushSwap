@@ -6,11 +6,11 @@
 /*   By: dhomem-d <dhomem-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 15:27:33 by dhomem-d          #+#    #+#             */
-/*   Updated: 2022/02/15 17:44:53 by dhomem-d         ###   ########.fr       */
+/*   Updated: 2022/02/16 19:47:29 by dhomem-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
+#include "../../includes/utils.h"
 
 void	rotate(d_list **stack, char *print)
 {
