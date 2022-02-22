@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   all_sort.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dhomem-d <dhomem-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/04 16:31:10 by dhomem-d          #+#    #+#             */
-/*   Updated: 2022/02/22 17:36:37 by dhomem-d         ###   ########.fr       */
+/*   Created: 2022/02/22 17:58:00 by dhomem-d          #+#    #+#             */
+/*   Updated: 2022/02/22 19:14:05 by dhomem-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int main(int argc, char *argv[])
+void	just_sort(d_list **stack_a)
 {
-	d_list	**stack_a;
+	
+}
 
-	if (arg_check(argc, argv) != 0)
-		return (1);
-	stack_a = (d_list**) malloc(sizeof(d_list*));
-	if (!stack_a)
-		return (2);
-	*stack_a = stack_init(argv);
-	sort(stack_a);
-	return 0;
+void	all_sort(d_list **stack_a, d_list **stack_b)
+{
+	
 }

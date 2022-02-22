@@ -6,7 +6,7 @@
 /*   By: dhomem-d <dhomem-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 16:15:28 by dhomem-d          #+#    #+#             */
-/*   Updated: 2022/02/22 14:49:38 by dhomem-d         ###   ########.fr       */
+/*   Updated: 2022/02/22 16:13:24 by dhomem-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,12 +68,12 @@ int	rot_check(d_list **stack_a, int lindex, int selec)
 	else if (selec == -1)
 	{
 		lindex = lstsize(*stack_a) - lindex;
-			while (lindex--)
-			{
-				rev_rotate(stack_a, "rra");
-				if (is_sorted(stack_a) == 0)
-					return (2);
-			}
+		while (lindex--)
+		{
+			rev_rotate(stack_a, "rra");
+			if (is_sorted(stack_a) == 0)
+				return (2);
+		}
 	}
 	return (0);
 }
@@ -105,9 +105,8 @@ int	split_med(d_list **stack_a, d_list **stack_b)
 
 void	ff_sort(d_list **stack_a, d_list **stack_b)
 {
-	if (split_med(stack_a, stack_b) == 2)
-		return ;
-	sort(stack_a);
-	while(lstsize(*stack_b) != 0)
+	if (split_med(stack_a, stack_b) != 2)
+		sort(stack_a);
+	while (lstsize(*stack_b) != 0)
 		push(stack_a, stack_b, "pa");
 }
