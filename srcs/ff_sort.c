@@ -6,7 +6,7 @@
 /*   By: dhomem-d <dhomem-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 16:15:28 by dhomem-d          #+#    #+#             */
-/*   Updated: 2022/02/17 20:16:23 by dhomem-d         ###   ########.fr       */
+/*   Updated: 2022/02/22 14:49:38 by dhomem-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,34 +54,59 @@ int	find_lowest(d_list **stack_a)
 	return (l_index);
 }
 
-void	split_med(d_list **stack_a, d_list **stack_b)
+int	rot_check(d_list **stack_a, int lindex, int selec)
+{
+	if (selec == 1)
+	{
+		while (lindex--)
+		{
+			rotate(stack_a, "ra");
+			if (is_sorted(stack_a) == 0)
+				return (2);
+		}
+	}
+	else if (selec == -1)
+	{
+		lindex = lstsize(*stack_a) - lindex;
+			while (lindex--)
+			{
+				rev_rotate(stack_a, "rra");
+				if (is_sorted(stack_a) == 0)
+					return (2);
+			}
+	}
+	return (0);
+}
+
+int	split_med(d_list **stack_a, d_list **stack_b)
 {
 	int	mid_size;
-	int	median;
 	int	lindex;
 
 	mid_size = (lstsize(*stack_a) / 2);
-	median = find_median(stack_a);
 	while (mid_size)
 	{
 		lindex = find_lowest(stack_a);
 		if (lindex <= (lstsize(*stack_a) / 2))
-			while (lindex--)
-				rotate(stack_a, "ra");
+		{
+			if (rot_check(stack_a, lindex, 1) == 2)
+				return (2);
+		}
 		else
 		{
-			lindex = lstsize(*stack_a) - lindex;
-			while (lindex--)
-				rev_rotate(stack_a, "rra");
+			if (rot_check(stack_a, lindex, -1) == 2)
+				return (2);
 		}
 		push(stack_b, stack_a, "pb");
 		mid_size--;
 	}
+	return (0);
 }
 
 void	ff_sort(d_list **stack_a, d_list **stack_b)
 {
-	split_med(stack_a, stack_b);
+	if (split_med(stack_a, stack_b) == 2)
+		return ;
 	sort(stack_a);
 	while(lstsize(*stack_b) != 0)
 		push(stack_a, stack_b, "pa");
