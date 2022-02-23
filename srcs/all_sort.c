@@ -6,7 +6,7 @@
 /*   By: dhomem-d <dhomem-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 17:58:00 by dhomem-d          #+#    #+#             */
-/*   Updated: 2022/02/23 17:36:57 by dhomem-d         ###   ########.fr       */
+/*   Updated: 2022/02/23 18:04:41 by dhomem-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,16 @@
 int	find_lowest_order(td_list **stack_a)
 {
 	static long		lowest;
+	static int		counter;
 	long			low_cur;
 	td_list		*node;
 
 	node = *stack_a;
-	if (!lowest)
+	if (!counter)
+	{
 		lowest = -2147483649;
+		counter = 0;
+	}
 	low_cur = 2147483648;
 	while (node)
 	{
@@ -29,6 +33,7 @@ int	find_lowest_order(td_list **stack_a)
 		node = node->next;
 	}
 	lowest = low_cur;
+	counter++;
 	return (low_cur);
 }
 
@@ -43,6 +48,7 @@ void	just_sort(td_list **stack_a)
 	{
 		node = *stack_a;
 		find = find_lowest_order(stack_a);
+		printf("FIND%i = %i\n", order, find);
 		while (node->content != find)
 			node = node->next;
 		node->order = order;
