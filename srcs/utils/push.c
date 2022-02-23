@@ -6,13 +6,13 @@
 /*   By: dhomem-d <dhomem-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 15:26:45 by dhomem-d          #+#    #+#             */
-/*   Updated: 2022/02/17 20:07:14 by dhomem-d         ###   ########.fr       */
+/*   Updated: 2022/02/23 14:56:29 by dhomem-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/utils.h"
 
-static void	thankyou_norminette(d_list *head_push, d_list **push, d_list **receive)
+static void	thankyou_norminette(td_list *head_push, td_list **push, td_list **receive)
 {
 	if (head_push->next)
 	{
@@ -25,10 +25,10 @@ static void	thankyou_norminette(d_list *head_push, d_list **push, d_list **recei
 	head_push->next = NULL;
 }
 
-void	push(d_list **receive, d_list **push, char *print)
+void	push(td_list **receive, td_list **push, char *print)
 {
-	d_list	*head_rec;
-	d_list	*head_push;
+	td_list	*head_rec;
+	td_list	*head_push;
 
 	head_rec = *receive;
 	head_push = *push;

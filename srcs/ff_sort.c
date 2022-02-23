@@ -6,17 +6,17 @@
 /*   By: dhomem-d <dhomem-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 16:15:28 by dhomem-d          #+#    #+#             */
-/*   Updated: 2022/02/22 16:13:24 by dhomem-d         ###   ########.fr       */
+/*   Updated: 2022/02/23 17:12:58 by dhomem-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	find_median(d_list **stack_a)
+int	find_median(td_list **stack_a)
 {
 	int		sum;
 	int		amount;
-	d_list	*node;
+	td_list	*node;
 
 	sum = 0;
 	amount = 0;
@@ -30,12 +30,12 @@ int	find_median(d_list **stack_a)
 	return (sum / amount);
 }
 
-int	find_lowest(d_list **stack_a)
+int	find_lowest(td_list **stack_a)
 {
 	int		cur_index;
 	int		l_index;
 	int		small;
-	d_list	*node;
+	td_list	*node;
 
 	cur_index = 0;
 	l_index = 0;
@@ -54,31 +54,31 @@ int	find_lowest(d_list **stack_a)
 	return (l_index);
 }
 
-int	rot_check(d_list **stack_a, int lindex, int selec)
+int	rot_check(td_list **stack_a, int lindex, int selec)
 {
-	if (selec == 1)
+	if (selec == 1 || selec == 2)
 	{
 		while (lindex--)
 		{
 			rotate(stack_a, "ra");
-			if (is_sorted(stack_a) == 0)
+			if (selec != 2 && is_sorted(stack_a) == 0)
 				return (2);
 		}
 	}
-	else if (selec == -1)
+	else if (selec == -1 || selec == -2)
 	{
 		lindex = lstsize(*stack_a) - lindex;
 		while (lindex--)
 		{
 			rev_rotate(stack_a, "rra");
-			if (is_sorted(stack_a) == 0)
+			if (selec != -2 && is_sorted(stack_a) == 0)
 				return (2);
 		}
 	}
 	return (0);
 }
 
-int	split_med(d_list **stack_a, d_list **stack_b)
+int	split_med(td_list **stack_a, td_list **stack_b)
 {
 	int	mid_size;
 	int	lindex;
@@ -103,7 +103,7 @@ int	split_med(d_list **stack_a, d_list **stack_b)
 	return (0);
 }
 
-void	ff_sort(d_list **stack_a, d_list **stack_b)
+void	ff_sort(td_list **stack_a, td_list **stack_b)
 {
 	if (split_med(stack_a, stack_b) != 2)
 		sort(stack_a);

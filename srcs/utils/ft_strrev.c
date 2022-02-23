@@ -1,25 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printlst.c                                      :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dhomem-d <dhomem-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/07 17:20:48 by duartebaeta       #+#    #+#             */
-/*   Updated: 2022/02/23 14:56:15 by dhomem-d         ###   ########.fr       */
+/*   Created: 2022/02/23 16:29:03 by dhomem-d          #+#    #+#             */
+/*   Updated: 2022/02/23 16:40:02 by dhomem-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/utils.h"
 
-void	printlst(td_list **lst)
+char	*strrev(char *string)
 {
-	td_list	*node;
-	
-	node = *lst;
-	while (node != NULL)
+	char	*newstring;
+	int		counter;
+	int		str_count;
+
+	newstring = (char *) malloc(sizeof(char) * ft_strlen(string) + 1);
+	if (!newstring)
+		return (NULL);
+	str_count = ft_strlen(string) - 1;
+	counter = 0;
+	while (str_count >= 0)
 	{
-		ft_printf("%i\n", node->content);
-		node = node->next;
+		newstring[counter] = string[str_count];
+		counter++;
+		str_count--;
 	}
+	newstring[counter] = '\0';
+	return (newstring);
 }

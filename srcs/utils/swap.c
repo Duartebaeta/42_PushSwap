@@ -6,16 +6,16 @@
 /*   By: dhomem-d <dhomem-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 15:27:37 by dhomem-d          #+#    #+#             */
-/*   Updated: 2022/02/16 19:47:10 by dhomem-d         ###   ########.fr       */
+/*   Updated: 2022/02/23 14:56:41 by dhomem-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/utils.h"
 
-void	swap(d_list **stack, char *print)
+void	swap(td_list **stack, char *print)
 {
 	int		tmp;
-	d_list	*head;
+	td_list	*head;
 
 	head = *stack;
 	if (lstsize(head) <= 1)
