@@ -6,7 +6,7 @@
 /*   By: dhomem-d <dhomem-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 16:31:10 by dhomem-d          #+#    #+#             */
-/*   Updated: 2022/02/23 17:41:28 by dhomem-d         ###   ########.fr       */
+/*   Updated: 2022/02/23 19:53:03 by dhomem-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,5 @@ int main(int argc, char *argv[])
 		return (2);
 	*stack_a = stack_init(argv);
 	sort(stack_a);
-	printlst(stack_a);
-	if (is_sorted(stack_a) == 0)
-		printf("FUCKING SUCCESS");
 	return 0;
 }

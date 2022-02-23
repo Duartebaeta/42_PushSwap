@@ -6,7 +6,7 @@
 /*   By: dhomem-d <dhomem-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 17:58:00 by dhomem-d          #+#    #+#             */
-/*   Updated: 2022/02/23 18:04:41 by dhomem-d         ###   ########.fr       */
+/*   Updated: 2022/02/23 19:45:23 by dhomem-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ void	just_sort(td_list **stack_a)
 	{
 		node = *stack_a;
 		find = find_lowest_order(stack_a);
-		printf("FIND%i = %i\n", order, find);
 		while (node->content != find)
 			node = node->next;
 		node->order = order;
@@ -113,58 +112,43 @@ int	get_max_bin(td_list **stack_a)
 	return (size);
 }
 
-int	closer_to_where(int content, td_list **stack_a)
+void	push_and_back(td_list **stack_a, td_list **stack_b)
 {
-	int	counter;
+	long	first_rot;
 	td_list	*node;
 
-	counter = 0;
-	node = *stack_a;
-	while (node->content != content)
+	first_rot = -2147483649;
+	while (first_rot != (*stack_a)->content)
 	{
-		node = node->next;
-		counter++;
-	}
-	return (counter);
-}
-
-void	push_and_back(td_list **stack_a, td_list **stack_b, int mult)
-{
-	td_list	*node;
-	int		index;
-
-	node = *stack_a;
-	while (node)
-	{
-		if (node->bin % mult == 0)
-		{
-			index = closer_to_where(node->content, stack_a);
-			if (index <= (lstsize(*stack_a) / 2))
-				rot_check(stack_a, index, 2);
-			else if (index > (lstsize(*stack_a) / 2))
-				rot_check(stack_a, index, -2);
+		if ((*stack_a)->bin % 10 == 0)
 			push(stack_b, stack_a, "pb");
-			node = *stack_a;
+		else
+		{
+			if (first_rot == -2147483649)
+				first_rot = (*stack_a)->content;
+			rotate(stack_a, "ra");
 		}
-		node = node->next;
 	}
 	while (lstsize(*stack_b) != 0)
 		push(stack_a, stack_b, "pa");
+	node = *stack_a;
+	while (node)
+	{
+		node->bin /= 10;
+		node = node->next;
+	}
 }
 
 void	all_sort(td_list **stack_a, td_list **stack_b)
 {
 	int	max_bin;
-	int mult;
 
 	just_sort(stack_a);
 	order_to_bin(stack_a);
 	max_bin = get_max_bin(stack_a);
-	mult = 10;
 	while (max_bin > 0 && is_sorted(stack_a) != 0)
 	{
-		push_and_back(stack_a, stack_b, mult);
-		mult *= 10;
+		push_and_back(stack_a, stack_b);
 		max_bin--;
 	}
 }
