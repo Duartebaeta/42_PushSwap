@@ -6,17 +6,17 @@
 /*   By: dhomem-d <dhomem-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 16:59:47 by duartebaeta       #+#    #+#             */
-/*   Updated: 2022/02/23 14:56:38 by dhomem-d         ###   ########.fr       */
+/*   Updated: 2022/02/24 16:29:22 by dhomem-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/utils.h"
+#include "../includes/push_swap.h"
 
-static td_list	*new_node(int content, td_list *prev)
+static t_dlist	*new_node(int content, t_dlist *prev)
 {
-	td_list	*new;
-	
-	new = (td_list*) malloc(sizeof(td_list));
+	t_dlist	*new;
+
+	new = (t_dlist *) malloc(sizeof(t_dlist));
 	if (!new)
 		return (NULL);
 	new->prev = prev;
@@ -25,10 +25,10 @@ static td_list	*new_node(int content, td_list *prev)
 	return (new);
 }
 
-td_list	*stack_init(char *numbers[])
+t_dlist	*stack_init(char *numbers[])
 {
-	td_list	*head;
-	td_list	*node;
+	t_dlist	*head;
+	t_dlist	*node;
 	int		counter;
 
 	counter = 1;

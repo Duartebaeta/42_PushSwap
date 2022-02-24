@@ -6,13 +6,13 @@
 /*   By: dhomem-d <dhomem-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 15:26:45 by dhomem-d          #+#    #+#             */
-/*   Updated: 2022/02/23 14:56:29 by dhomem-d         ###   ########.fr       */
+/*   Updated: 2022/02/24 16:57:35 by dhomem-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/utils.h"
 
-static void	thankyou_norminette(td_list *head_push, td_list **push, td_list **receive)
+static void	thankyou_norm(t_dlist *head_push, t_dlist **push, t_dlist **receive)
 {
 	if (head_push->next)
 	{
@@ -25,10 +25,10 @@ static void	thankyou_norminette(td_list *head_push, td_list **push, td_list **re
 	head_push->next = NULL;
 }
 
-void	push(td_list **receive, td_list **push, char *print)
+void	push(t_dlist **receive, t_dlist **push, char *print)
 {
-	td_list	*head_rec;
-	td_list	*head_push;
+	t_dlist	*head_rec;
+	t_dlist	*head_push;
 
 	head_rec = *receive;
 	head_push = *push;
@@ -48,6 +48,6 @@ void	push(td_list **receive, td_list **push, char *print)
 		*receive = head_push;
 	}
 	else
-		thankyou_norminette(head_push, push, receive);
+		thankyou_norm(head_push, push, receive);
 	ft_printf("%s\n", print);
 }

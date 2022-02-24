@@ -6,24 +6,24 @@
 /*   By: dhomem-d <dhomem-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 18:03:08 by dhomem-d          #+#    #+#             */
-/*   Updated: 2022/02/23 17:40:01 by dhomem-d         ###   ########.fr       */
+/*   Updated: 2022/02/24 17:05:50 by dhomem-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	two_sort(td_list **stack)
+void	two_sort(t_dlist **stack)
 {
-	td_list	*head;
+	t_dlist	*head;
 
 	head = *stack;
 	if (head->content > head->next->content)
 		swap(stack, "sa");
 }
 
-void	three_sort(td_list **stack)
+void	three_sort(t_dlist **stack)
 {
-	td_list	*head;
+	t_dlist	*head;
 
 	head = *stack;
 	if (head->content < head->next->content
@@ -46,15 +46,16 @@ void	three_sort(td_list **stack)
 	}
 }
 
-int	sort(td_list **stack_a)
+int	sort(t_dlist **stack_a)
 {
-	td_list	**stack_b;
+	t_dlist	**stack_b;
 	int		size;
 
 	size = lstsize(*stack_a);
-	stack_b = (td_list **) malloc(sizeof(td_list *));
+	stack_b = (t_dlist **) malloc(sizeof(t_dlist *));
 	if (!stack_b)
 		return (2);
+	*stack_b = NULL;
 	if (is_sorted(stack_a) == 0)
 		return (0);
 	if (size == 2)
@@ -66,6 +67,10 @@ int	sort(td_list **stack_a)
 	else if (size > 5)
 		all_sort(stack_a, stack_b);
 	if (is_sorted(stack_a) == 0)
+	{
+		free(stack_b);
 		return (0);
+	}
+	free(stack_b);
 	return (1);
 }

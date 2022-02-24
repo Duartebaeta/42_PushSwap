@@ -6,16 +6,16 @@
 /*   By: dhomem-d <dhomem-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 15:27:29 by dhomem-d          #+#    #+#             */
-/*   Updated: 2022/02/23 14:56:31 by dhomem-d         ###   ########.fr       */
+/*   Updated: 2022/02/24 16:28:49 by dhomem-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/utils.h"
 
-void	rev_rotate(td_list **stack, char *print)
+void	rev_rotate(t_dlist **stack, char *print)
 {
-	td_list	*node;
-	td_list	*head;
+	t_dlist	*node;
+	t_dlist	*head;
 
 	if (lstsize(*stack) <= 1)
 		return ;

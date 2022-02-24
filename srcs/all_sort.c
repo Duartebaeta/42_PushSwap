@@ -6,58 +6,16 @@
 /*   By: dhomem-d <dhomem-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 17:58:00 by dhomem-d          #+#    #+#             */
-/*   Updated: 2022/02/23 19:45:23 by dhomem-d         ###   ########.fr       */
+/*   Updated: 2022/02/24 17:12:03 by dhomem-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	find_lowest_order(td_list **stack_a)
-{
-	static long		lowest;
-	static int		counter;
-	long			low_cur;
-	td_list		*node;
-
-	node = *stack_a;
-	if (!counter)
-	{
-		lowest = -2147483649;
-		counter = 0;
-	}
-	low_cur = 2147483648;
-	while (node)
-	{
-		if (node->content < low_cur && node->content > lowest)
-			low_cur = node->content;
-		node = node->next;
-	}
-	lowest = low_cur;
-	counter++;
-	return (low_cur);
-}
-
-void	just_sort(td_list **stack_a)
-{
-	td_list	*node;
-	int		order;
-	int		find;
-
-	order = 0;
-	while (order < lstsize(*stack_a))
-	{
-		node = *stack_a;
-		find = find_lowest_order(stack_a);
-		while (node->content != find)
-			node = node->next;
-		node->order = order;
-		order++;
-	}
-}
-
-long	bin_convert(int	order)
+long	bin_convert(int order)
 {
 	char	*keep_bin;
+	char	*leak;
 	long	returner;
 	int		counter;
 
@@ -74,14 +32,16 @@ long	bin_convert(int	order)
 		counter++;
 	}
 	keep_bin[counter] = '\0';
-	returner = ft_atol(strrev(keep_bin));
+	leak = strrev(keep_bin);
+	returner = ft_atol(leak);
 	free(keep_bin);
+	free(leak);
 	return (returner);
 }
 
-void	order_to_bin(td_list **stack_a)
+void	order_to_bin(t_dlist **stack_a)
 {
-	td_list	*node;
+	t_dlist	*node;
 
 	node = *stack_a;
 	while (node)
@@ -91,12 +51,12 @@ void	order_to_bin(td_list **stack_a)
 	}
 }
 
-int	get_max_bin(td_list **stack_a)
+int	get_max_bin(t_dlist **stack_a)
 {
-	int	max_order;
+	int		max_order;
 	long	temp;
 	int		size;
-	td_list	*node;
+	t_dlist	*node;
 
 	node = *stack_a;
 	size = 0;
@@ -112,10 +72,10 @@ int	get_max_bin(td_list **stack_a)
 	return (size);
 }
 
-void	push_and_back(td_list **stack_a, td_list **stack_b)
+void	push_and_back(t_dlist **stack_a, t_dlist **stack_b)
 {
 	long	first_rot;
-	td_list	*node;
+	t_dlist	*node;
 
 	first_rot = -2147483649;
 	while (first_rot != (*stack_a)->content)
@@ -139,7 +99,7 @@ void	push_and_back(td_list **stack_a, td_list **stack_b)
 	}
 }
 
-void	all_sort(td_list **stack_a, td_list **stack_b)
+void	all_sort(t_dlist **stack_a, t_dlist **stack_b)
 {
 	int	max_bin;
 

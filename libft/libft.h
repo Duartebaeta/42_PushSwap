@@ -6,7 +6,7 @@
 /*   By: dhomem-d <dhomem-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 16:53:29 by dhomem-d          #+#    #+#             */
-/*   Updated: 2022/02/23 16:00:15 by dhomem-d         ###   ########.fr       */
+/*   Updated: 2022/02/24 16:26:08 by dhomem-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef struct sd_list
 	int				order;
 	long			bin;
 	struct sd_list	*next;	
-}	td_list;
+}	t_dlist;
 
 typedef struct s_list
 {
