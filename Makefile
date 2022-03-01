@@ -12,9 +12,27 @@ PATH_LIBFT		:= ./libft
 PATH_INCLUDES	:= ./includes
 #Getting all the .c files and turning them into .o files
 BIN				:= ./$(NAME)
-SRCS			:= $(wildcard $(PATH_SRC)/*.c)
+SRCS			:= $(PATH_SRC)/all_sort_utils.c \
+					$(PATH_SRC)/all_sort.c \
+					$(PATH_SRC)/argument_check.c \
+					$(PATH_SRC)/ff_sort.c \
+					$(PATH_SRC)/main.c \
+					$(PATH_SRC)/sorting.c \
+					$(PATH_SRC)/stack_init.c
+
 OBJ				:= $(subst .c,.o,$(subst $(PATH_SRC), $(PATH_OBJS), $(SRCS)))
-SRCS_UTILS		:= $(wildcard $(PATH_UTILS)/*.c)
+SRCS_UTILS		:= $(PATH_UTILS)/free_stack.c \
+					$(PATH_UTILS)/ft_atol.c \
+					$(PATH_UTILS)/ft_printlst.c \
+					$(PATH_UTILS)/ft_strrev.c \
+					$(PATH_UTILS)/is_sorted.c \
+					$(PATH_UTILS)/lstsize.c \
+					$(PATH_UTILS)/push.c \
+					$(PATH_UTILS)/rev_rotate.c \
+					$(PATH_UTILS)/rotate.c \
+					$(PATH_UTILS)/same_time.c \
+					$(PATH_UTILS)/swap.c
+
 OBJ_UTILS		:= $(subst .c,.o,$(subst $(PATH_UTILS), $(PATH_OBJS_UTILS), $(SRCS_UTILS)))
 LIBFT			:= $(PATH_LIBFT)/libft.a
 
